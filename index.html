@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billie Eilish</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <img src="images/NAME.svg" alt="Billie Eilish Title" class="name">
+    <h><br></h>
+    <h>&laquo;I&rsquo;m the bad guy...duh&raquo;</h>
+    
+    <p class="lead">Американская певица, чье имя стало синонимом музыкальной революции нового поколения. Она ворвалась в&nbsp;индустрию в&nbsp;2015&nbsp;году, когда её&nbsp;песня Ocean Eyes, записанная в&nbsp;домашней студии, неожиданно стала вирусным хитом. С&nbsp;тех пор Айлиш покорила мировые чарты своим уникальным звучанием, мрачной эстетикой и&nbsp;неподражаемым стилем, который балансирует между хрупкостью и&nbsp;дерзостью.
+
+    <br>Её&nbsp;дебютный альбом When We&nbsp;All Fall Asleep, Where Do&nbsp;We&nbsp;Go? (2019) сделал её&nbsp;мировой суперзвездой, а&nbsp;такие хиты, как Bad Guy и&nbsp;Bury a&nbsp;Friend, закрепили за&nbsp;ней статус голосa поколения. Айлиш экспериментирует с&nbsp;жанрами, сочетая поп, инди и&nbsp;электронное звучание с&nbsp;необычной подачей и&nbsp;глубокими текстами, в&nbsp;которых она откровенно говорит о&nbsp;своих эмоциях, тревогах и&nbsp;переживаниях.
+
+    <br>Билли также известна своей аутентичностью и&nbsp;смелостью&nbsp;&mdash; она отвергает традиционные стандарты индустрии и&nbsp;выступает за&nbsp;самовыражение и&nbsp;бодипозитив. Её&nbsp;фирменный стиль&nbsp;&mdash; мешковатая одежда, кислотные оттенки волос и&nbsp;минималистичный макияж&nbsp;&mdash; стал символом свободы быть собой.
+
+    <br>Несмотря на&nbsp;юный возраст, Айлиш уже обладает множеством наград, включая несколько &laquo;Грэмми&raquo;, и&nbsp;продолжает вдохновлять миллионы поклонников по&nbsp;всему миру. Её&nbsp;музыка&nbsp;&mdash; это не&nbsp;просто мелодии, а&nbsp;голос целого поколения, говорящий о&nbsp;темах, которые раньше замалчивались.</p>
+    
+    <div class="images">
+    <a href="biography.html" class="billie-figure">
+        <img src="images/billie-figure.png" alt="Перейти к биографии">
+    </a>
+    <a href="discography.html" class="vinyl">
+        <img src="images/vinyl-record.png" alt="Перейти к дискографии">
+    </a>
+</div>
+
+    <div class="face">
+        <div class="eye">
+            <div class="iris">
+                <div class="pupil"></div>
+            </div>
+        </div>
+        <div class="eye">
+            <div class="iris">
+                <div class="pupil"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const eyes = document.querySelectorAll('.eye');
+
+        document.addEventListener('mousemove', (e) => {
+            eyes.forEach((eye) => {
+                const iris = eye.querySelector('.iris');
+                const pupil = eye.querySelector('.pupil');
+                const eyeRect = eye.getBoundingClientRect();
+                const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+                const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+
+                const dx = e.clientX - eyeCenterX;
+                const dy = e.clientY - eyeCenterY;
+                const angle = Math.atan2(dy, dx);
+
+                const maxDistance = 20;
+                const distance = Math.min(Math.sqrt(dx * dx + dy * dy), maxDistance);
+
+                const irisX = Math.cos(angle) * distance;
+                const irisY = Math.sin(angle) * distance;
+
+                iris.style.transform = `translate(${irisX}px, ${irisY}px)`;
+                pupil.style.transform = `translate(${irisX}px, ${irisY}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

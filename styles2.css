@@ -1,0 +1,180 @@
+body {
+    background-color: black;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+h {
+    color: #ffffff; 
+    font-size: 3em;
+    margin-top: 50px;
+    font-family: "Yanone Kaffeesatz", monospace; /* Подключаем шрифт Martian Mono */
+	font-weight: 400;
+}
+
+h1 {
+    font-family: "Yanone Kaffeesatz", monospace;
+    font-size: 3em;
+    font-weight: bold;
+    color: #8dfc8d;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+h2 {
+    font-family: "Yanone Kaffeesatz", monospace;
+    font-size: 2em;
+    color: #8dfc8d;
+    margin: 40px 0 10px;
+    text-align: center;
+}
+
+p { 
+    font-family: "Oswald", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px 0;
+    font-weight: 300;
+    text-align: center; /* Изменено для выравнивания текста по центру */
+}
+.page-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #0f0; /* Неоновый зеленый цвет */
+    text-align: center;
+    margin-top: 30px;
+    
+    letter-spacing: 2px;
+}
+.page-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black; /* Цвет фона под заголовком */
+    padding: 20px 0;
+    z-index: 10; /* Убедимся, что заголовок выше остального контента */
+    
+}
+
+.page-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: #8dfc8d; /* Цвет текста */
+    margin: 0;
+}
+
+
+/* Класс для вариаций шрифта  */
+.yanone-kaffeesatz-<uniquifier> {
+  font-family: "Yanone Kaffeesatz", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Стиль для основной информации */
+.oswald-<uniquifier> {
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lead {
+  font-family: "Oswald", serif; /* Применяем шрифт Zen Kurenaido для основного текста */
+  font-size: 1.5em;
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+
+.discography-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.album {
+    max-width: 400px;
+}
+
+.album-cover {
+    width: 100%;
+    border: 5px solid neon-green;
+    transition: transform 0.3s ease-in-out;
+}
+
+.album-cover:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* Стили для изображений */
+.images {
+	position: absolute;
+    display: flex;
+    top: 70%; /* Опускаем ниже */
+    width: 100%;
+    z-index: 1; /* Убедимся, что изображения не перекрывают глаза */
+	padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+.images a {
+	position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.images img {
+    width: 200px;
+    cursor: pointer;
+    /*transition: transform 0.3s ease, scale 0.3s ease;*/
+}
+
+
+.images .vinyl {
+    right: 5%; /* Размещаем пластинку справа */
+	top: 70%;
+    animation: spin 5s linear infinite;
+}
+
+.images img:hover {
+    transform: scale(1.1); /* Увеличиваем при наведении */
+}
+
+/* Стиль для виниловой пластинки с анимацией */
+.vinyl {
+    animation: spin 5s linear infinite;
+}
+
+.vinyl:hover {
+    transform: scale(1.1) rotate(360deg);
+}
+
+/* Анимация для вращения */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
